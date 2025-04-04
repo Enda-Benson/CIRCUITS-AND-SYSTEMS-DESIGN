@@ -31,11 +31,10 @@ int height = 64;
 //***************************************************************************************
 
 void joystickClick() {
-  clicked = true;
+  clicked = true;   
 }  //interrupt function for click detection
 
 void setup() {
-
   Serial.begin(9600);
 
   setupOLED();     // screen.h
@@ -43,6 +42,7 @@ void setup() {
 
   pinMode(stickY, INPUT);
   pinMode(clickPin, INPUT_PULLUP);
+  
   attachInterrupt(digitalPinToInterrupt(clickPin), joystickClick, CHANGE);
 
   ball.start(playerX + playerW, vy, width, height, display);  //give ball class all the information it needs.

@@ -29,6 +29,7 @@ public:
     active = true;
   }  //spawn ball at desired y value
 
+
   void show() {  //draw the ball
     if (active) {
       //show ball at x,y with radius r
@@ -69,8 +70,6 @@ public:
     } else
       return 0;
   }
-
-  
 };  // close ball class
 
 Ball ball;  //initialise an instance of the ball class (initialise a ball)

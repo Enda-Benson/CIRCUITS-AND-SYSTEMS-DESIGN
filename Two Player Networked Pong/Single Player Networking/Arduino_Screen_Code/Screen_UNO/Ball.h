@@ -2,7 +2,8 @@
 class Ball {
 public:
   int r;          //ball size
-  int x, y;       // ball position
+  int x;
+  int y;       // ball position
   int dy, dx;     // ball velocity components
   int count = 2;  //count of collisions for accelerating the ball
   bool active = false;
@@ -13,7 +14,7 @@ public:
 
   void start(int X, int vy, int W, int H, Adafruit_SSD1306 screen) {
     width = W;
-    r = floor(width/70);
+    r = 3;
     x = X + r;
     height = H;
     dy = vy;
@@ -29,6 +30,7 @@ public:
     active = true;
   }  //spawn ball at desired y value
 
+
   void show() {  //draw the ball
     if (active) {
       //show ball at x,y with radius r
@@ -37,7 +39,6 @@ public:
   }
 
   void update(boolean collided) {
-
     if (collided) {  // if the ball hits a paddle change direction
       count++;
       dx = floor(pow(-1, count));
@@ -51,7 +52,6 @@ public:
     if (y > height || y < 0) {
       dy = dy * -1;  //invert the slope to bounce next frame
     }
-
     show();
   }
 
@@ -69,8 +69,6 @@ public:
     } else
       return 0;
   }
-
-  
 };  // close ball class
 
 Ball ball;  //initialise an instance of the ball class (initialise a ball)

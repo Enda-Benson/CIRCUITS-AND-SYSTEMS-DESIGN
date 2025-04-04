@@ -4,6 +4,10 @@ void drawPong(int x, int y) {
   display.fillRect(x, y - playerH, playerW, playerH, SSD1306_WHITE);
 }
 
+
+
+
+
 void movementPlayer() {
   int stickValue = analogRead(stickY);
   int m = 0;  //Directional multiplier, used to modify the velocity to be positvie/negative or Zero
@@ -20,11 +24,17 @@ void movementPlayer() {
   //have player move "vy" pixels in the "m" direction
 }
 
+
+
+
 void drawMap() {
   //display.drawLine(playerX, 0, playerX, height, SSD1306_WHITE);
   //display.drawLine(botX, 0, botX, height, SSD1306_WHITE);
   display.drawLine(width / 2, 0, width / 2, height, SSD1306_WHITE);
 }
+
+
+
 
 void setupPlayers() {
   //this code initialises the global variables based on the screen dimensions
